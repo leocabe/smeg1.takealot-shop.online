@@ -13,7 +13,7 @@
     }(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1238580704010895');
+    fbq('init', '2558147041205045');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent');
   </script>
@@ -29,7 +29,7 @@
   ></script>
   <!-- END UTMIFY -->
   <script>
-  window.pixelId = "69f3308425c7d3cc4f8da0a2";
+  window.pixelId = "67918adf0b80f52dd2589822";
   var a = document.createElement("script");
   a.setAttribute("async", "");
   a.setAttribute("defer", "");
@@ -1684,7 +1684,7 @@
   <div class="wrap">
     <section class="hero" aria-label="Product hero">
       <div class="hero__imgbox">
-        <img id="productImage" class="hero__img" src="p1.png" alt="Product image" />
+        <img id="productImage" class="hero__img" src="smeg-black.jpg" alt="Product image" />
 
         <div class="badge-off" aria-label="Discount badge">
           UP TO 74%
@@ -1712,7 +1712,7 @@
 
     <section class="info" aria-label="Product info">
       <div class="title-row">
-        <h1 id="productTitle" class="title">Smeg 3-Piece Breakfast Set 2-Slice Toaster, 1.7L Kettle & Blender - Black</h1>
+        <h1 id="productTitle" class="title">Smeg 4-Piece Kitchen Set – 2-Slice Toaster, 1.7L Kettle, Blender & Stand Mixer – Black</h1>
 
         <button class="share-btn" aria-label="Share">
           <svg class="share-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1740,19 +1740,19 @@
         <label>Colour</label>
         <div class="color-options">
           <div class="color-swatch selected" data-color="Black"       title="Black">
-            <img src="p1.png" alt="Black">
+            <img src="smeg-black.jpg" alt="Black">
           </div>
           <div class="color-swatch" data-color="Cream"       title="Cream">
-            <img src="91eYg.jpg" alt="Cream">
+            <img src="smeg-cream.jpg" alt="Cream">
           </div>
           <div class="color-swatch" data-color="Pastel Blue" title="Pastel Blue">
-            <img src="MV1XU.jpg" alt="Pastel Blue">
+            <img src="smeg-blue.jpg" alt="Pastel Blue">
           </div>
           <div class="color-swatch" data-color="Pink"        title="Pink">
-            <img src="v40kB.jpg" alt="Pink">
+            <img src="smeg-pink.jpg" alt="Pink">
           </div>
           <div class="color-swatch" data-color="Mint Green"  title="Mint Green">
-            <img src="WhatsApp Image 2026-06-11 at 00.57.51.jpeg" alt="Mint Green">
+            <img src="smeg-green.jpg" alt="Mint Green">
           </div>
         </div>
         <div class="color-name-label" id="colorNameLabel">Black</div>
@@ -2306,7 +2306,7 @@
   <!-- Modal fullscreen -->
   <div class="modal" id="modal">
     <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-    <img id="modalImg" src="p1.png" alt="Expanded product image">
+    <img id="modalImg" src="smeg-black.jpg" alt="Expanded product image">
   </div>
 
   <!-- TAKEALOT CREDIT IMAGE BANNER -->
@@ -2323,7 +2323,7 @@
 
 
     // ===== Carousel (dots + swipe) =====
-const images = ["p1.png","p2.png","p3.png","p4.png","p5.png"];
+const images = ["smeg-black.jpg","p2.png","p3.png","p4.png","p5.png"];
 
 const productImage = document.getElementById("productImage");
 const dots = Array.from(document.querySelectorAll(".dots .dot"));
@@ -2382,11 +2382,11 @@ setActive(0);
 
 // ===== Color selector =====
 const colorImageSets = {
-  "Black":       ["p1.png","p2.png","p3.png","p4.png","p5.png"],
-  "Cream":       ["91eYg.jpg","91eYg.jpg","91eYg.jpg","91eYg.jpg","91eYg.jpg"],
-  "Pastel Blue": ["MV1XU.jpg","MV1XU.jpg","MV1XU.jpg","MV1XU.jpg","MV1XU.jpg"],
-  "Pink":        ["v40kB.jpg","v40kB.jpg","v40kB.jpg","v40kB.jpg","v40kB.jpg"],
-  "Mint Green":  ["WhatsApp Image 2026-06-11 at 00.57.51.jpeg","WhatsApp Image 2026-06-11 at 00.57.51.jpeg","WhatsApp Image 2026-06-11 at 00.57.51.jpeg","WhatsApp Image 2026-06-11 at 00.57.51.jpeg","WhatsApp Image 2026-06-11 at 00.57.51.jpeg"],
+  "Black":       ["smeg-black.jpg","p2.png","p3.png","p4.png","p5.png"],
+  "Cream":       ["smeg-cream.jpg","smeg-cream.jpg","smeg-cream.jpg","smeg-cream.jpg","smeg-cream.jpg"],
+  "Pastel Blue": ["smeg-blue.jpg","smeg-blue.jpg","smeg-blue.jpg","smeg-blue.jpg","smeg-blue.jpg"],
+  "Pink":        ["smeg-pink.jpg","smeg-pink.jpg","smeg-pink.jpg","smeg-pink.jpg","smeg-pink.jpg"],
+  "Mint Green":  ["smeg-green.jpg","smeg-green.jpg","smeg-green.jpg","smeg-green.jpg","smeg-green.jpg"],
 };
 
 let selectedColor = "Black";
@@ -2400,7 +2400,7 @@ function updateColor(color) {
 
   if(productTitle)
     productTitle.innerText =
-      "Smeg 3-Piece Breakfast Set 2-Slice Toaster, 1.7L Kettle & Blender - " + color;
+      "Smeg 4-Piece Kitchen Set – 2-Slice Toaster, 1.7L Kettle, Blender & Stand Mixer - " + color;
 
   if(colorImageSets[color]) {
     images.splice(0, images.length, ...colorImageSets[color]);
